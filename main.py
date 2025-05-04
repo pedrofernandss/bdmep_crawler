@@ -22,5 +22,12 @@ def init_webdriver(timeout):
 
 def get_page(_driver, url):
     _driver.get(url)
-    time.spleep(5)
+    time.sleep(5)
     return BeautifulSoup(_driver.page_source, 'html.parser')
+
+def dbmep_access_login_page(_driver):
+
+    dpmep_url = os.getenv('MY_ENV_VAR')
+    get_page(_driver, dpmep_url)
+
+    _driver.find_element(By.LINK_TEXT, "Prosseguir").click()
