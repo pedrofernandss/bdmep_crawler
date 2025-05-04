@@ -27,7 +27,7 @@ def get_page(_driver, url):
 
 def dbmep_access_login_page(_driver):
 
-    dpmep_url = os.getenv('MY_ENV_VAR')
+    dpmep_url = os.getenv('BDMEP_URL')
     get_page(_driver, dpmep_url)
 
     _driver.find_element(By.LINK_TEXT, "Prosseguir").click()
